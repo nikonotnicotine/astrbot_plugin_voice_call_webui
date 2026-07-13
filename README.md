@@ -204,11 +204,11 @@ webui_port = 6888
 ```
 webui_host = 0.0.0.0
 webui_port = 6888
-webui_public_url = http://192.168.1.23:6888/
+webui_public_url = http://192.0.0.0:6888/
 webui_password = 改成一个你自己的密码
 ```
 
-> ⚠️ 把 `192.168.1.23` 换成你自己查到的 IP 地址！
+> ⚠️ 把 `192.0.0.0` 换成你自己的 IP 地址！
 
 **第 3 步：Windows 防火墙放行端口**
 
@@ -223,7 +223,7 @@ New-NetFirewallRule -DisplayName "VoiceCall WebUI" -Direction Inbound -Protocol 
 确保手机和电脑连的是同一个 Wi-Fi（不能是访客网络），然后手机浏览器打开：
 
 ```
-http://192.168.1.23:6888/
+http://0.0.0.0:6888/
 ```
 
 输入密码后即可使用。
