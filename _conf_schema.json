@@ -39,7 +39,7 @@
         "type": "string",
         "default": "",
         "description": "对外访问地址",
-        "hint": "显示在 QQ 通知中的 WebUI 地址。手机双向语音请填写 HTTPS 地址，例如 https://voice.example.com/；仅局域网临时测试可填 http://192.168.1.10:6888/。"
+        "hint": "显示在 QQ 通知中的 WebUI 地址。手机双向语音请填写 HTTPS 地址，例如 https://voice.example.com/；仅局域网临时测试可填 http://0.0.0.0:6888/。"
     },
     "webui_password": {
         "type": "string",
