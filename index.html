@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoiceCall 通话</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>📞</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="day">
+
+    <div class="container" id="app-container">
+        <header class="top-bar">
+            <button id="theme-toggle" class="icon-btn icon-sun"></button>
+            <span class="app-title">VoiceCall</span>
+            <div class="top-bar-right">
+                <span id="ws-indicator" class="ws-dot" title="未连接"></span>
+                <button id="settings-button" class="icon-btn icon-gear"></button>
+            </div>
+        </header>
+
+        <main id="home-screen" class="view active">
+            <div class="home-buttons">
+                <button id="make-call-btn" class="action-btn">
+                    <span class="ico ico-call-out"></span> 给对方拨打电话
+                </button>
+            </div>
+        </main>
+
+        <main id="call-screen" class="view">
+            <div class="call-container">
+                <div id="call-avatar" class="avatar"></div>
+                <p id="caller-name-display" class="caller-name"></p>
+                <p id="call-status">正在等待对方接听...</p>
+                <p id="call-timer">00:00</p>
+
+                <div id="subtitle-panel" class="subtitle-panel"></div>
+
+                <div id="incoming-controls" class="call-controls incoming">
+                    <button id="reject-call-btn" class="call-btn hangup">
+                        <span class="cbg cbg-red"></span>
+                        <span>挂断</span>
+                    </button>
+                    <button id="answer-call-btn" class="call-btn answer">
+                        <span class="cbg cbg-green"></span>
+                        <span>接听</span>
+                    </button>
+                </div>
+
+                <div id="active-call-controls" class="call-controls active-call">
+                    <button id="mic-toggle-btn" class="ctrl-btn toggled">
+                        <span class="ico ico-mic-on"></span>
+                    </button>
+                    <button id="hangup-call-btn" class="ctrl-btn main-hangup">
+                        <span class="ico ico-hangup-w"></span>
+                    </button>
+                    <button id="speaker-toggle-btn" class="ctrl-btn toggled">
+                        <span class="ico ico-spk-on"></span>
+                    </button>
+                </div>
+
+                <div id="text-input-area" class="text-input-area" style="display:none;">
+                    <input type="text" id="text-input" class="text-input" placeholder="输入文字消息...">
+                    <button id="text-send-btn" class="send-btn">
+                        <span class="ico ico-send"></span>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <div id="settings-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>设置</h2>
+                    <button id="close-modal-btn" class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="setting-item">
+                        <label for="caller-name-input">来电备注/昵称:</label>
+                        <input type="text" id="caller-name-input" placeholder="对方的称呼或备注">
+                    </div>
+                    <div class="setting-item">
+                        <label for="avatar-url">头像URL:</label>
+                        <input type="text" id="avatar-url" placeholder="输入图片URL或选择文件">
+                        <label for="avatar-upload" class="upload-label">
+                            <span class="ico ico-upload"></span> 从本地上传
+                            <input type="file" id="avatar-upload" accept="image/*">
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label for="bg-url">背景URL:</label>
+                        <input type="text" id="bg-url" placeholder="输入图片URL或选择文件">
+                        <label for="bg-upload" class="upload-label">
+                            <span class="ico ico-upload"></span> 从本地上传
+                            <input type="file" id="bg-upload" accept="image/*">
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label for="call-ui-style">通话界面样式:</label>
+                        <select id="call-ui-style">
+                            <option value="default">默认</option>
+                            <option value="qq">QQ 电话</option>
+                            <option value="wechat">微信电话</option>
+                        </select>
+                    </div>
+                    <div class="setting-item setting-toggle-item">
+                        <div class="setting-toggle-copy">
+                            <label for="subtitle-toggle">通话字幕</label>
+                            <p id="subtitle-setting-hint" class="setting-hint">在本网页显示本次通话的双方字幕</p>
+                        </div>
+                        <label class="toggle-switch" title="显示或隐藏通话字幕">
+                            <input type="checkbox" id="subtitle-toggle" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <button id="save-settings-btn" class="save-btn">保存设置</button>
+                    <button id="reset-settings-btn" class="reset-btn">恢复默认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

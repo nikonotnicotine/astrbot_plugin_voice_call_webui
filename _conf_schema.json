@@ -1,0 +1,116 @@
+{
+    "show_subtitle": {
+        "type": "bool",
+        "default": true,
+        "description": "网页字幕",
+        "hint": "通话时在网页中显示用户与 AI 的文字字幕。"
+    },
+    "sync_to_qq": {
+        "type": "bool",
+        "default": false,
+        "description": "同步文本到 QQ",
+        "hint": "将 AI 在通话中的文字回复同步发送到 QQ 聊天窗口。"
+    },
+    "text_input_mode": {
+        "type": "bool",
+        "default": true,
+        "description": "静音后文字输入",
+        "hint": "麦克风静音后，允许用户在网页中输入文字继续对话。"
+    },
+    "ai_call_notify_enabled": {
+        "type": "bool",
+        "default": true,
+        "description": "AI 来电通知",
+        "hint": "AI 主动发起网页通话时，向 QQ 发送来电通知。"
+    },
+    "ai_call_notify_target": {
+        "type": "string",
+        "default": "",
+        "description": "来电通知目标",
+        "hint": "留空通知最近一次 AstrBot 对话；也可填写 QQ 号、group:群号或完整 unified_msg_origin。"
+    },
+    "conversation_context_target": {
+        "type": "string",
+        "default": "",
+        "description": "通话上下文 QQ",
+        "hint": "填写 QQ 号后，网页通话会读取并写入该私聊会话的 AstrBot 人设与聊天记录；也可填写 group:群号或完整 unified_msg_origin。留空则使用当前/最近会话。"
+    },
+    "webui_public_url": {
+        "type": "string",
+        "default": "",
+        "description": "对外访问地址",
+        "hint": "显示在 QQ 通知中的 WebUI 地址。手机双向语音请填写 HTTPS 地址，例如 https://voice.example.com/；仅局域网临时测试可填 http://192.168.1.10:6888/。"
+    },
+    "webui_password": {
+        "type": "string",
+        "default": "voicecall",
+        "description": "网页访问密码",
+        "hint": "公网或 VPS 部署时请改为强密码；留空表示关闭密码保护。"
+    },
+    "openai_stt_enabled": {
+        "type": "bool",
+        "default": true,
+        "description": "内置 OpenAI STT",
+        "hint": "开启后使用插件内置的 OpenAI 兼容语音识别，不再从 AstrBot 拉取 STT Provider。"
+    },
+    "openai_stt_api_key": {
+        "type": "string",
+        "default": "",
+        "description": "STT API Key",
+        "hint": "OpenAI 兼容 STT 服务的 API Key。"
+    },
+    "openai_stt_base_url": {
+        "type": "string",
+        "default": "https://api.openai.com/v1",
+        "description": "STT 服务地址",
+        "hint": "填写 OpenAI 兼容 API 的 Base URL，例如 https://api.openai.com/v1；也可直接填写完整的 /audio/transcriptions 地址。"
+    },
+    "openai_stt_model": {
+        "type": "string",
+        "default": "whisper-1",
+        "description": "STT 模型",
+        "hint": "例如 whisper-1、gpt-4o-mini-transcribe，或服务商提供的模型名。"
+    },
+    "openai_stt_language": {
+        "type": "string",
+        "default": "zh",
+        "description": "STT 识别语言",
+        "hint": "中文建议填写 zh；如果服务商不支持该参数可留空。"
+    },
+    "openai_stt_prompt": {
+        "type": "string",
+        "default": "",
+        "description": "STT 识别提示词",
+        "hint": "可填写人名、角色名或常用词，以帮助识别；不需要可留空。"
+    },
+    "openai_stt_timeout": {
+        "type": "int",
+        "default": 60,
+        "description": "STT 超时（秒）",
+        "hint": "单次 STT 请求的最长等待时间，单位为秒。"
+    },
+    "stt_provider_id": {
+        "type": "string",
+        "default": "",
+        "description": "AstrBot STT ID",
+        "hint": "旧版 AstrBot STT Provider ID；仅在“内置 OpenAI STT”关闭时使用。"
+    },
+    "tts_provider_id": {
+        "type": "string",
+        "default": "",
+        "description": "AstrBot TTS ID",
+        "hint": "指定 TTS Provider ID；留空则使用当前 AstrBot 会话选择的 TTS。"
+    },
+    "webui_host": {
+        "type": "string",
+        "default": "127.0.0.1",
+        "description": "网页监听 IP",
+        "hint": "默认仅本机访问；同 Wi-Fi 临时测试可改为 0.0.0.0。手机正式语音请通过 HTTPS 反向代理访问，插件仍建议保持 127.0.0.1。"
+    },
+    "webui_port": {
+        "type": "int",
+        "default": 6888,
+        "description": "网页监听端口",
+        "hint": "WebUI 的监听端口，同时提供网页和 WebSocket 服务。"
+    }
+}

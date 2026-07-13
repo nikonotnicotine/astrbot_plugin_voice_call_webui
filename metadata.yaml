@@ -1,0 +1,9 @@
+name: voice_call_webui
+display_name: "网页语音通话"
+desc: "在 WebUI 中实现真实 AI 语音通话，复用 AstrBot 已配置的 LLM/STT/TTS Provider。QQ 负责文字聊天，WebUI 负责语音通话。"
+short_desc: "WebUI 语音通话 - AI 打电话、接电话、语音对话"
+author: "VoiceCall Team"
+version: "1.0.3"
+support_platforms:
+  - aiocqhttp
+  - napcat
